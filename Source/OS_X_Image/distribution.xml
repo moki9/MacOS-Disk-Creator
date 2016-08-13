@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <title>Clover Only UEFI</title>
+    <pkg-ref id="com.Hackintosh.cloverbootloader"/>
+    <options customize="never" allow-external-scripts="true"/>
+    <domains enable_anywhere="true"/>
+    <welcome file="Welcome"/>
+    <volume-check script="pm_volume_check();"/>
+    <script>function pm_volume_check() {
+  if(!(my.target.mountpoint != '/')) {
+    my.result.title = 'Failure';
+    my.result.message = 'You cannot install to your Main drive.';
+    my.result.type = 'Fatal';
+    return false;
+  }
+  return true;
+}
+</script> 
+    <background file="background" alignment="center" scaling="tofit"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.Hackintosh.cloverbootloader"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.Hackintosh.cloverbootloader" visible="false">
+        <pkg-ref id="com.Hackintosh.cloverbootloader"/>
+    </choice>
+    <pkg-ref id="com.Hackintosh.cloverbootloader" version="1" onConclusion="none">CloverUEFI.pkg</pkg-ref>
+</installer-gui-script>

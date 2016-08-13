@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>419</string>
+	<key>AMApplicationVersion</key>
+	<string>2.6</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Exécuter un script AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string># MacOS Disk Creator.# Copyright (c) 2016, Chris1111 &lt;leblond1111@gmail.com&gt; display dialog "
+Welcome MacOS Disk Creator !
+This program will Create a MacOS DMG image.
+The Bootloader Clover EFI will be installed 
+in the DMG EFI partition.
+PS: ( Working for UEFI and Legacy configurations )
+
+The image will be restore with a dd command
+this will preserve all bootloader Clover file.
+
+You can create an OS X image to 10.7 
+at Mac OS Sierra 10.12 
+Insert your USB Drive right now !
+Select your Install Mac OS.app  " with icon alias ((path to me) &amp; "Contents:Resources:AutomatorApplet.icns" as string) buttons {"Quit", "Create &amp; Restore DMG ➔ USB"} cancel button {"Quit"} default button {"Create &amp; Restore DMG ➔ USB"}--If Continueif result = {button returned:"Create &amp; Restore DMG ➔ USB"} then		set InstallOSX to reference choose file with prompt "Choose the location of your Install OS X.app"	set OSXInstaller to POSIX path of InstallOSX	do shell script "hdiutil attach -noverify -nobrowse -mountpoint /Volumes/installer_OS \"" &amp; OSXInstaller &amp; "Contents/SharedSupport/InstallESD.dmg\""		display dialog "
+Format your USB drive with Disk Utility
+
+         *** Attentions *** 		 
+After erasing the drive You must quit 
+Disk Utility to continue !" with icon alias ((path to me) &amp; "Contents:Resources:AutomatorApplet.icns" as string) buttons {"Continue", "Quit"} cancel button {"Quit"} default button {"Continue"}		tell application "/Applications/Utilities/Disk Utility.app"		activate	end tell		repeat		if application "Disk Utility" is not running then exit repeat			end repeat	set theAction to button returned of (display dialog "
+	Run MacOS Disk Creator" with icon alias ((path to me) &amp; "Contents:Resources:AutomatorApplet.icns" as string) buttons {"Quit", "Run"} cancel button {"Quit"} default button {"Run"})	if theAction = "Run" then set theFile to ((path to me) as string) &amp; "Contents:Resources:MacOS Disk Creator.app"	tell application "Finder" to open theFile		end if</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>2E3814B7-D397-4653-A4A8-A29C0846F203</string>
+				<key>Keywords</key>
+				<array>
+					<string>Exécuter</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>D16BBA88-E923-4B6B-A492-2CC7467477F2</string>
+				<key>UUID</key>
+				<string>FA65DF70-A888-4EDE-8CCB-438EBFCAC085</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:316.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.application</string>
+	</dict>
+</dict>
+</plist>

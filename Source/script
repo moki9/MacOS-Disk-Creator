@@ -1,0 +1,5 @@
+#!/bin/bash
+# MacOS Disk Creator
+# chris1111 <leblond1111@gmail.com>
+
+./MacOSDiskCreator.sh
