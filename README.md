@@ -31,9 +31,8 @@ You can create an OS X image to Mac OS X Lion 10.7 at MacOS Sierra 10.12
 
 PS : The image can be used in Windows to be restore on a USB stick with a program like Suse Studio. Rename the file .raw or .iso and compress as 7Zip or WinRAR
 
-  
+## You need minimum (16 Gig USB) drive  
  
-
 ## Credit Apple, Clover Team, thefanclub, Platypus, all HMF tester OS X Image and Me !
 
 ## Instructions

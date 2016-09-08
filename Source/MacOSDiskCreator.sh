@@ -36,7 +36,7 @@ osascript -e 'display notification "Installer Image MacOS" with title "Start"  s
 
 Sleep 2
 # create sparseimage
-hdiutil create -size 7g -type SPARSE -fs HFS+J -volname Mac_OS_Installer -uid 0 -gid 80 -mode 1775 /tmp/MacOS
+hdiutil create -size 8g -type SPARSE -fs HFS+J -volname Mac_OS_Installer -uid 0 -gid 80 -mode 1775 /tmp/MacOS
 
 # Mount the dmg image
 hdiutil attach -nobrowse /tmp/MacOS.sparseimage
