@@ -9,10 +9,9 @@ Based on thefanclub /dd-utility https://github.com/thefanclub/dd-utility and my 
 
 This is a Automator app bundle containing another app created with Platypus 5.1
 
-Containing also Clover EFI Bootloader revision Clover v2.3k r3696
+Containing also Clover EFI Bootloader revision Clover v2.3k r3728 (CloverESPOSXImage.pkg)
 
-The OS Installer Packages is create inside the app by the command pkgbuild;
-same thing for the Clover Packages.
+The OS Installer Packages is create inside the app by the command pkgbuild.
 
 This program will Create a MacOS DMG image.
 
