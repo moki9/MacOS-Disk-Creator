@@ -60,7 +60,6 @@ osascript -e 'do shell script "installer -allowUntrusted -verboseR -pkg ./Instal
 # script Notifications
 osascript -e 'display notification "Finish" with title "Installing OS"  sound name "default"'
 
-pkgbuild --root ./OS_X_Image/Clover_UEFI_Legacy --scripts ./OS_X_Image/scripts --identifier com.Hackintosh.cloverbootloader --version 1 --install-location / CloverEFI.pkg
 
 osascript -e 'tell app "System Events" to display dialog "Installing Clover EFI
 Volumes/EFI ⥤ Mac_OS_Installer
@@ -70,7 +69,7 @@ echo "Installation  /Volumes/EFI ⥤ /Mac_OS_Installer "
 
 Sleep 2
 # run the pkg
-osascript -e 'do shell script "installer -allowUntrusted -verboseR -pkg ./CloverEFI.pkg -target /Volumes/Mac_OS_Installer" with administrator privileges'
+osascript -e 'do shell script "installer -allowUntrusted -verboseR -pkg ./OS_X_Image/Clover_ESP/CloverESPOSXImage.pkg -target /Volumes/Mac_OS_Installer" with administrator privileges'
 
 
 # script Notifications
