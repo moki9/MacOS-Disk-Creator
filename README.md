@@ -32,7 +32,7 @@ PS : The image can be used in Windows to be restore on a USB stick with a progra
 
 ## You need minimum (16 Gig USB) drive  
  
-## Credit Apple, Clover Team, thefanclub, Platypus, all HMF tester OS X Image:Scooterl67, mourad-hh, PROUX, pantera, arcade33, Bumbay, emax31, Loloflat6, and Me !
+## Credit Apple, Clover Team, thefanclub, Platypus, all HMF tester OS X Image:Scooterl67, mourad-hh, PROUX, pantera, arcade33, and Me !
 
 ## Instructions
 
